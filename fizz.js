@@ -4,22 +4,34 @@ var divisible = false;
 for(var i=1; i <= 100; i++)
 {
     divisible = false;
-    if(i % 3 == 0)
+    if(esDivisible(i,3))
     {
         document.write("FIZZ");
         divisible = true;
     }
 
-    if(i % 5 == 0)
+    if(esDivisible(i,5))
     {
         document.write("BUZZ");
         divisible = true;
     }
 
     // if(!divisible) // !divisible indica que NO ES DIVISIBLE
-    if(i % 3 != 0 && i % 5 != 0)
+    if(!esDivisible(i,3) && !esDivisible(i,5))
     {
         document.write(i);
     }
     document.write("<br />");
+}
+
+function esDivisible(num, divisor)
+{
+    if(num % divisor == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
