@@ -1,20 +1,25 @@
 var numeros = 100
+var divisible = false;
+
 for(var i=1; i <= 100; i++)
 {
-    if(i % 15 == 0)
+    divisible = false;
+    if(i % 3 == 0)
     {
-        document.write("FIZZBUZZ <br />");
+        document.write("FIZZ");
+        divisible = true;
     }
-    else if(i % 3 == 0)
+
+    if(i % 5 == 0)
     {
-        document.write("FIZZ <br />");
+        document.write("BUZZ");
+        divisible = true;
     }
-    else if(i % 5 == 0)
+
+    // if(!divisible) // !divisible indica que NO ES DIVISIBLE
+    if(i % 3 != 0 && i % 5 != 0)
     {
-        document.write("BUZZ <br />");
+        document.write(i);
     }
-    else
-    {
-        document.write(i + "<br />");
-    }
+    document.write("<br />");
 }
